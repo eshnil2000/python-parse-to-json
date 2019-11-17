@@ -18,6 +18,15 @@ with open('testsmall.py') as source:
      tree=ast.parse(source.read())
 
 ```
+
+### ast tutorial https://greentreesnakes.readthedocs.io/en/latest/nodes.html
+```
+>>> tree = ast.parse("print('hello world')")
+>>> tree
+<_ast.Module object at 0x9e3df6c>
+>>> exec(compile(tree, filename="<ast>", mode="exec"))
+hello world
+
 ### In python:
 ```
 import json
