@@ -11,6 +11,12 @@ Created on 2017-01-20 by Philip Guo
 ### Use Python2
 ```python parse_python_to_json.py --pyfile=testsmall.py >testsmall.json```
 
+### Use ast module to convert code to ast
+```
+import ast
+with open('testsmall.py') as source:
+     tree=ast.parse(source.read())
+
 ### In python:
 ```
 import json
