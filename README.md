@@ -37,6 +37,19 @@ def add(x, y):
     return x + y
 ```
 
+### To get source from AST, Use Astor module
+```
+import ast
+import astor
+example = """def add(x, y):
+...     return x + y"""
+tree = ast.parse(example)
+ast.dump(tree)
+for statement in tree.body:
+...     print(ast.dump(statement), '\n')
+print(astor.to_source(tree))
+```
+
 Forked the HEAD of https://github.com/m-labs/pythonparser/ on 2017-01-20 into here and simplified it.
 
 hello!
