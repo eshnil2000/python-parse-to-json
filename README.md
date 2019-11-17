@@ -8,10 +8,10 @@ Created on 2017-01-20 by Philip Guo
 
 ---
 
-# Use Python2
-# # Use Python2
-# python parse_python_to_json.py --pyfile=testsmall.py >testsmall.json
-# In python:
+### Use Python2
+```python parse_python_to_json.py --pyfile=testsmall.py >testsmall.json```
+
+### In python:
 ```
 import json
 with open('testsmall.json') as json_file:
