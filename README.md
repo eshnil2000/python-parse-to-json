@@ -66,12 +66,15 @@ for statement in tree.body:
 print(astor.to_source(tree))
 ```
 
-### Astor to convert source to AST
+### Astor to convert source to AST, extract functions https://suhas.org/function-call-ast-python/
 ```
 import ast
 import astor
 x=astor.parse_file("testsmall.py")
 print(x)
+for statement in x.body:
+     print(ast.dump(statement))
+
 ```
 
 Forked the HEAD of https://github.com/m-labs/pythonparser/ on 2017-01-20 into here and simplified it.
