@@ -18,8 +18,18 @@ with open('testsmall.json') as json_file:
    data = json.load(json_file) 
 # To access json entries: 
 data['body'][0]['name']
+#returns 'Add'
 data['body'][0]['args']['args'][0]['arg']
+#returns 'x'
 data['body'][0]['args']['args'][1]['arg']
+# returns  'y'
+data['body'][0]['body'][0]['value']['_fields']
+#returns ['left', 'op', 'right']
+data['body'][0]['body'][0]['value']['type']
+#returns 'BinOp'
+data['body'][0]['body'][0]['value']['op']['type']
+#returns 'Add'
+
 ```
 # Contents of testsmall.py:
 ```
