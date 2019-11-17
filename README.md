@@ -8,6 +8,25 @@ Created on 2017-01-20 by Philip Guo
 
 ---
 
+# Use Python2
+# # Use Python2
+# python parse_python_to_json.py --pyfile=testsmall.py >testsmall.json
+# In python:
+```
+import json
+with open('testsmall.json') as json_file:
+   data = json.load(json_file) 
+# To access json entries: 
+data['body'][0]['name']
+data['body'][0]['args']['args'][0]['arg']
+data['body'][0]['args']['args'][1]['arg']
+```
+# Contents of testsmall.py:
+```
+def add(x, y):
+    return x + y
+```
+
 Forked the HEAD of https://github.com/m-labs/pythonparser/ on 2017-01-20 into here and simplified it.
 
 hello!
