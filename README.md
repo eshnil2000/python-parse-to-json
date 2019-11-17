@@ -77,6 +77,15 @@ for statement in x.body:
 
 ```
 
+### Count number of functions
+```
+import ast
+
+with open(filename) as f:
+    tree = ast.parse(f.read())
+    sum(isinstance(exp, ast.FunctionDef) for exp in tree.body)
+```
+
 Forked the HEAD of https://github.com/m-labs/pythonparser/ on 2017-01-20 into here and simplified it.
 
 hello!
