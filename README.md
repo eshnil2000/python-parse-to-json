@@ -57,6 +57,14 @@ for statement in tree.body:
 print(astor.to_source(tree))
 ```
 
+### Astor to convert source to AST
+```
+import ast
+import astor
+x=astor.parse_file("testsmall.py")
+print(x)
+```
+
 Forked the HEAD of https://github.com/m-labs/pythonparser/ on 2017-01-20 into here and simplified it.
 
 hello!
