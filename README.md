@@ -76,12 +76,12 @@ for statement in x.body:
      print(ast.dump(statement))
 
 ```
-### Extract statements from ast: x contains list of sets
+### Extract statements from ast: x contains list of lists
 ```
 >>> x=[]
 >>> y=0
 >>> for statement in tree.body:
-...     x.append({ast.dump(statement)})
+...     x.append([ast.dump(statement)])
 ...     print(y)
 ...     y+=1
 ```
