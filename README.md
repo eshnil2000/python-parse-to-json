@@ -57,6 +57,19 @@ for statement in tree.body:
              if(isinstance(statement.value,ast.Str)):
                      print(statement)
 ```
+
+### STEP 8: WRITE SOURCE CODE to separate files
+```
+i=0
+for statement in tree.body:
+     y=ast.Module([statement])
+     z=astor.to_source(y)
+     f= "file"+str(i)
+     g=open(f,"w+")
+     g.write(z)
+     g.close()
+     i+=1
+```
 ###-----
 
 # python-parse-to-json
