@@ -1,3 +1,20 @@
+# Break Python Source code into separate code modules
+
+###-----
+### STEP #1 Use ast module to convert code to ast
+```
+import ast
+with open('testsmall.py') as source:
+     tree=ast.parse(source.read())
+```
+### STEP #2 Split statements of ast, convert to ast Module, then convert to python code
+```
+for statement in tree.body:
+     y=ast.Module([statement])
+     astor.to_source(y)
+```
+###-----
+
 # python-parse-to-json
 
 Parse Python code to an AST in JSON format, based upon https://github.com/m-labs/pythonparser/
@@ -10,14 +27,6 @@ Created on 2017-01-20 by Philip Guo
 
 ### Use Python2
 ```python parse_python_to_json.py --pyfile=testsmall.py >testsmall.json```
-
-### Use ast module to convert code to ast
-```
-import ast
-with open('testsmall.py') as source:
-     tree=ast.parse(source.read())
-
-```
 
 ### ast tutorial https://greentreesnakes.readthedocs.io/en/latest/nodes.html
 ```
