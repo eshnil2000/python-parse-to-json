@@ -13,6 +13,27 @@ for statement in tree.body:
      y=ast.Module([statement])
      astor.to_source(y)
 ```
+
+### STEP #3 Identify as imports
+```
+for statement in tree.body:
+...     if(isinstance(statement,ast.Import)):
+...             print(statement)
+... 
+```
+
+### STEP #4 Identify functions
+```
+for statement in tree.body:
+...     if(isinstance(statement,ast.FunctionDef)):
+...             print(statement)
+```
+### STEP 5 Identify Expressions 
+```
+for statement in tree.body:
+...     if(isinstance(statement,ast.Expr)):
+...             print(statement)
+```
 ###-----
 
 # python-parse-to-json
