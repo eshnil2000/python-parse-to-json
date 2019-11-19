@@ -88,9 +88,17 @@ for statement in x.body:
 
 ### Find instance of:
 ```
-for statement in tree1.body:
+for statement in tree.body:
 ...     if isinstance(statement,ast.Expr):
 ...             print(statement)
+```
+
+### Get function names:
+```
+for statement in tree.body:
+...     if isinstance(statement,ast.FunctionDef):
+...             print(statement.name)
+... 
 ```
 ### Count number of functions
 ```
