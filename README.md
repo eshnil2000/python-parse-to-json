@@ -86,6 +86,12 @@ for statement in x.body:
 ...     y+=1
 ```
 
+### Find instance of:
+```
+for statement in tree1.body:
+...     if isinstance(statement,ast.Expr):
+...             print(statement)
+```
 ### Count number of functions
 ```
 import ast
