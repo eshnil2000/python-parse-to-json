@@ -70,6 +70,25 @@ for statement in tree.body:
      g.close()
      i+=1
 ```
+
+### STEP 9: Find which functions are called in each of the Assignment statements
+
+```
+for statement in tree.body:
+     if(isinstance(statement,ast.Assign)):
+             print(statement.value.func.id)
+```
+### STEP 10: Match functions that are called in assignment statements
+```
+for statement in tree.body:
+	if(isinstance(statement,ast.Assign)):
+			print(statement.value.func.id)
+			match=statement.value.func.id
+			for statement in tree.body:
+				if(isinstance(statement,ast.FunctionDef)):
+					if(match==statement.name):
+						print(statement.name)
+```                              
 ###-----
 
 # python-parse-to-json
