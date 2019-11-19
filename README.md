@@ -17,23 +17,46 @@ for statement in tree.body:
 ### STEP #3 Identify as imports
 ```
 for statement in tree.body:
-...     if(isinstance(statement,ast.Import)):
-...             print(statement)
-... 
+     if(isinstance(statement,ast.Import)):
+             print(statement)
+ 
 ```
 
 ### STEP #4 Identify functions
 ```
 for statement in tree.body:
-...     if(isinstance(statement,ast.FunctionDef)):
-...             print(statement)
+     if(isinstance(statement,ast.FunctionDef)):
+             print(statement)
 ```
 ### STEP 5 Identify Expressions 
 ```
 for statement in tree.body:
-...     if(isinstance(statement,ast.Expr)):
-...             print(statement)
+     if(isinstance(statement,ast.Expr)):
+             print(statement)
 ```
+
+### STEP 6 Identify Assignments (example: g=add(4,5))
+```
+for statement in tree.body:
+     if(isinstance(statement,ast.Assign)):
+             print(statement)
+```
+
+### STEP 7 Identify Function calls (example: print(g)) 
+```
+for statement in tree.body:
+     if(isinstance(statement,ast.Expr)):
+             if(isinstance(statement.value,ast.Call)):
+                     print(statement)
+```
+
+### STEP 7 Identify Comments/ strings
+```
+for statement in tree.body:
+     if(isinstance(statement,ast.Expr)):
+             if(isinstance(statement.value,ast.Str)):
+                     print(statement)
+
 ###-----
 
 # python-parse-to-json
