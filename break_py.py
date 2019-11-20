@@ -1,7 +1,7 @@
 import ast
 import astor
 import os.path
-save_path = '/Users/vivaan/Nilesh/Clouderate/python-parse-to-json/output/'
+save_path = '/output/'
 
 with open('test2.py') as source:
 	tree=ast.parse(source.read())
